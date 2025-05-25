@@ -5,11 +5,6 @@ body {
     color: #F3F4F6; /* Light gray text color for body */
 }
 
-/* Prevent background scrolling when modal is open */
-body.modal-open {
-    overflow: hidden;
-}
-
 /* Custom scrollbar with red accent color */
 ::-webkit-scrollbar {
     width: 8px;
@@ -38,26 +33,32 @@ body.modal-open {
     color: #ffffff; /* White icon text on hover */
 }
 
-.mobile-menu-dark div a {
+.mobile-menu-dark div a { /* General mobile menu links */
     display: block;
     padding-left: 0.75rem; padding-right: 0.75rem;
     padding-top: 0.5rem; padding-bottom: 0.5rem;
     border-radius: 0.375rem;
-    font-size: 1rem; /* text-base */
+    font-size: 1rem; 
     line-height: 1.5rem;
-    font-weight: 500; /* font-medium */
-    color: #ef4444; /* red-500 for mobile menu links */
+    font-weight: 500; 
+    color: #ef4444; 
     transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 .mobile-menu-dark div a:hover {
-    background-color: #1f2937; /* gray-800 */
-    color: #f87171; /* red-400 */
+    background-color: #1f2937; 
+    color: #f87171; 
 }
+/* Specific styling for mobile discord button if needed, or use Tailwind in HTML */
+.discord-button-mobile { 
+    padding-top: 0.5rem; padding-bottom: 0.5rem; /* Tailwind py-2 */
+    border-radius: 0.375rem; /* Tailwind rounded-md */
+}
+
 
 /* Hero Section Video Background Styles */
 #home {
-    position: relative; /* Needed for absolute positioning of video and overlay */
-    overflow: hidden; /* Hide any video overflow */
+    position: relative; 
+    overflow: hidden; 
 }
 
 #hero-video {
@@ -68,11 +69,11 @@ body.modal-open {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100; /* Ensure video is behind other content */
+    z-index: -100; 
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
     transition: 1s opacity;
-    object-fit: cover; /* Ensures the video covers the area without distortion */
+    object-fit: cover; 
 }
 
 .video-overlay {
@@ -81,23 +82,36 @@ body.modal-open {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.80); /* Dark overlay */
-    z-index: -50; /* Between video and text content */
+    background-color: rgba(0, 0, 0, 0.80); 
+    z-index: -50; 
 }
 
-.section-title {
-    /* Tailwind utility classes used directly in HTML */
+.section-title { }
+
+.card { } /* Base card styles are mostly Tailwind */
+
+.player-card { /* Parent for hover stats, ensure it's a positioning context */
+    position: relative;
 }
 
-.card {
-    /* Tailwind utility classes used directly in HTML */
+/* Player Stats Hover Overlay Styles */
+/* Tailwind classes used in HTML: 
+   absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 
+   w-64 p-3 bg-gray-800 border border-red-500/50 rounded-md shadow-lg 
+   opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+   pointer-events-none group-hover:pointer-events-auto z-10 
+*/
+.player-stats-hover ul li {
+    padding: 0.25rem 0; /* Reduced padding for smaller hover box */
+    border-bottom: 1px solid #374151; /* gray-700 for separator */
 }
-.card h3 {
-    color: #ffffff;
+.player-stats-hover ul li:last-child {
+    border-bottom: none;
 }
-.card p {
-    color: #d1d5db;
+.player-stats-hover h5 { /* For the "Key Stats" title */
+    /* Tailwind classes used in HTML */
 }
+
 
 .fade-in-up {
     opacity: 0;
@@ -119,42 +133,12 @@ body.modal-open {
     color: #f87171; /* Red-400 */
 }
 
-/* Player Stats Modal Styles */
-.stats-modal {
-    /* Tailwind classes 'fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50' are in HTML */
-    /* Adding transition for fade-in/out effect */
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
-}
-
-.stats-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.stats-modal-content {
-    /* Tailwind classes 'bg-gray-900 p-6 rounded-lg shadow-xl w-full max-w-md relative border border-red-500/50' are in HTML */
-    /* Adding transform for a slight pop effect */
-    transform: scale(0.95);
-    transition: transform 0.3s ease-in-out;
-}
-
-.stats-modal.active .stats-modal-content {
-    transform: scale(1);
-}
-
-.stats-modal-content ul li {
-    /* Tailwind classes 'text-gray-300 space-y-3' are in HTML for the ul */
-    padding: 0.5rem 0; /* Add some padding to list items */
-    border-bottom: 1px solid #374151; /* gray-700 for separator */
-}
-.stats-modal-content ul li:last-child {
-    border-bottom: none;
-}
-
-.stats-modal-content .close-stats-modal {
-    /* Tailwind classes 'absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none' are in HTML */
-    font-weight: bold;
-    transition: color 0.2s ease-in-out;
+/* Discord button specific styles (if not fully covered by Tailwind in HTML) */
+.discord-button {
+    /* Most styling from Tailwind: 
+       px-4 py-2 rounded-md text-sm font-medium text-white 
+       bg-red-600 hover:bg-red-700 transition-colors 
+    */
+    display: inline-flex; /* To align icon and text */
+    align-items: center;
 }
