@@ -9,41 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuButton && mobileMenu && menuIconOpen && menuIconClose) {
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden'); // Toggles visibility of the menu
-            menuIconOpen.classList.toggle('hidden'); // Toggles visibility of the open icon
-            menuIconClose.classList.toggle('hidden'); // Toggles visibility of the close icon
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
         });
-    } else {
-        console.warn("Mobile menu elements not found. Ensure IDs are correct: mobile-menu-button, mobile-menu, menu-icon-open, menu-icon-close.");
     }
 
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default anchor click behavior
-
+            e.preventDefault(); 
             const targetId = this.getAttribute('href');
-            // Ensure targetId is not just "#" to prevent errors
             if (targetId.length > 1) {
                 try {
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth' // Enables smooth scrolling
-                        });
-
-                        // Close mobile menu after click if it's open and on a mobile device
-                        if (mobileMenu && !mobileMenu.classList.contains('hidden') && menuIconOpen && menuIconClose) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');
                             menuIconOpen.classList.remove('hidden');
                             menuIconClose.classList.add('hidden');
                         }
-                    } else {
-                        console.warn(`Smooth scroll target element not found for href: ${targetId}`);
                     }
                 } catch (error) {
-                    // This can happen if targetId is not a valid selector, e.g. "#"
-                    console.error(`Error finding element for smooth scroll with href: ${targetId}`, error);
+                    console.error(`Error finding element for smooth scroll: ${targetId}`, error);
                 }
             }
         });
@@ -53,36 +42,102 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentYearElement = document.getElementById('currentYear');
     if (currentYearElement) {
         currentYearElement.textContent = new Date().getFullYear();
-    } else {
-        console.warn("Element with ID 'currentYear' not found for footer.");
     }
 
-    // Simple fade-in animation on scroll for elements with class 'fade-in-up'
-    const observerOptions = {
-        root: null, // Observes intersections relative to the document viewport
-        rootMargin: '0px', // No margin around the root
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    };
-
+    // Simple fade-in animation on scroll
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
     const observerCallback = (entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible'); // Add 'visible' class to trigger animation
-                observer.unobserve(entry.target); // Stop observing the element once it's visible
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
             }
         });
     };
-
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const elementsToFadeIn = document.querySelectorAll('.fade-in-up');
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-    if (elementsToFadeIn.length > 0) {
-        elementsToFadeIn.forEach(el => {
-            observer.observe(el); // Start observing each element
+    // --- Generic Modal Functionality ---
+    function initializeModals(triggerClass, modalClass, closeButtonClass) {
+        const modalTriggers = document.querySelectorAll(`.${triggerClass}`);
+        const modals = document.querySelectorAll(`.${modalClass}`);
+        const closeButtons = document.querySelectorAll(`.${closeButtonClass}`);
+
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                setTimeout(() => { // Allow display change before starting transition
+                    modal.classList.add('active');
+                    document.body.classList.add('modal-open');
+                }, 10);
+            } else {
+                console.warn(`Modal with ID "${modalId}" not found.`);
+            }
+        }
+
+        function closeModal(modal) {
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.classList.remove('modal-open');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300); // Must match CSS transition duration
+            }
+        }
+
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent click from bubbling up if trigger is inside another clickable element
+                const modalId = trigger.dataset.modalTarget;
+                if (modalId) {
+                    openModal(modalId);
+                } else {
+                    console.warn("Modal trigger does not have a data-modal-target attribute:", trigger);
+                }
+            });
         });
+
+        closeButtons.forEach(button => {
+            // Check if this button belongs to the current type of modal
+            if (button.closest(`.${modalClass}`)) {
+                button.addEventListener('click', () => {
+                    const modal = button.closest(`.${modalClass}`);
+                    closeModal(modal);
+                });
+            }
+        });
+
+        modals.forEach(modal => {
+            modal.addEventListener('click', (event) => {
+                if (event.target === modal) { // Click on backdrop
+                    closeModal(modal);
+                }
+            });
+        });
+        
+        return { openModal, closeModal }; // Expose functions if needed elsewhere
     }
 
-    // All previous modal-specific JavaScript has been removed.
-    // The hover effect for player stats is handled by CSS (Tailwind's group-hover).
+    // Initialize Settings Modals
+    const settingsModalControls = initializeModals('player-settings-trigger', 'settings-modal', 'close-settings-modal');
+    // If you had other types of modals, you could initialize them here too:
+    // const otherModalControls = initializeModals('other-trigger-class', 'other-modal-class', 'other-close-button-class');
+
+
+    // Close any active modal with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const activeSettingsModal = document.querySelector('.settings-modal.active');
+            if (activeSettingsModal) {
+                settingsModalControls.closeModal(activeSettingsModal);
+            }
+            // Add checks for other active modal types if you have them
+            // const activeOtherModal = document.querySelector('.other-modal-class.active');
+            // if (activeOtherModal) {
+            // otherModalControls.closeModal(activeOtherModal);
+            // }
+        }
+    });
 
 }); // End of DOMContentLoaded
