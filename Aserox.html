@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASEROX - CS2 Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <header class="navbar-dark bg-black sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#home" class="flex-shrink-0">
+                        <span class="text-3xl logo-text-style">ASEROX</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#home" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-red-500 transition-colors">Home</a>
+                        <a href="#about" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-red-500 transition-colors">About</a>
+                        <a href="#team" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-red-500 transition-colors">Team</a>
+                        <a href="#matches" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-red-500 transition-colors">Matches</a>
+                        <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:text-red-500 transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center mobile-menu-dark">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:bg-gray-800 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <svg class="h-6 w-6 hidden" id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden mobile-menu-dark bg-black shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block">Home</a>
+                <a href="#about" class="block">About</a>
+                <a href="#team" class="block">Team</a>
+                <a href="#matches" class="block">Matches</a>
+                <a href="#contact" class="block">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative h-[calc(100vh-4rem)] flex items-center justify-center text-center">
+            <video autoplay loop muted playsinline id="hero-video">
+                <source src="PlayersPictures/Aserox.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+            <div class="relative z-10 p-4 sm:p-6">
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4">
+                    <span class="block text-white">TEAM</span>
+                    <span class="block text-red-500">ASEROX</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base sm:text-lg md:mt-5 md:text-xl md:max-w-3xl text-gray-200">
+                    Dominating the server, one round at a time. Your go-to CS2 team for competitive Faceit action.
+                </p>
+                <div class="mt-5 md:mt-8 flex justify-center space-x-3">
+                    <a href="#team" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition-colors shadow-lg">
+                        Meet the Team
+                    </a>
+                    <a href="https://www.faceit.com/en/teams/4775708b-8cee-4105-a9ec-2fcb7bef7578" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-5 py-3 border border-gray-400 text-base font-medium rounded-md text-white bg-transparent hover:bg-gray-800 hover:border-red-500 transition-colors shadow-lg">
+                        Team Faceit Page
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-16 sm:py-24 bg-black">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center fade-in-up">
+                    <h2 class="text-base font-semibold text-red-500 tracking-wide uppercase">Who We Are</h2>
+                    <p class="mt-2 section-title">About Team ASEROX</p>
+                </div>
+                <div class="mt-10 max-w-3xl mx-auto text-center text-lg sm:text-xl text-gray-300 space-y-6 fade-in-up">
+                    <p>
+                        ASEROX is a competitive Counter-Strike 2 team forged in the fires of online matchmaking and fueled by a passion for tactical gameplay and teamwork. We primarily focus on the Faceit platform, striving to climb the ranks and make a name for ourselves.
+                    </p>
+                    <p>
+                        Our journey started with a group of friends who shared a common goal: to play CS2 at a high level while maintaining a positive and supportive team environment. We believe in constant improvement, strategic thinking, and, most importantly, enjoying the game.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="py-16 sm:py-24 bg-gray-900/70">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Meet Our Squad</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
+                    <div class="card fade-in-up">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
+                             src="PlayersPictures/flypyyy.jpeg" alt="Profile picture of flypyyy">
+                        <h3 class="text-xl font-semibold text-center">flypyyy</h3>
+                        <p class="text-red-500 text-center text-sm font-medium">IGL</p>
+                        <p class="mt-2 text-center text-xs">The strategic mind of the team.</p>
+                        <div class="mt-4 text-center">
+                            <a href="https://www.faceit.com/en/players/flypyyy" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 transition-colors text-sm">
+                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in-up" style="animation-delay: 0.1s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
+                             src="PlayersPictures/CataN1.jpeg" alt="Profile picture of CataN1">
+                        <h3 class="text-xl font-semibold text-center">CataN1</h3>
+                        <p class="text-red-500 text-center text-sm font-medium">Entry Fragger</p>
+                        <p class="mt-2 text-center text-xs">First to the fight, creating space.</p>
+                        <div class="mt-4 text-center">
+                            <a href="https://www.faceit.com/en/players/CataN1" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 transition-colors text-sm">
+                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in-up" style="animation-delay: 0.2s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
+                             src="PlayersPictures/LongLiveCCG.jpeg" alt="Profile picture of LongLiveCCG">
+                        <h3 class="text-xl font-semibold text-center">LongLiveCCG</h3>
+                        <p class="text-red-500 text-center text-sm font-medium">AWPer</p>
+                        <p class="mt-2 text-center text-xs">The team's sharpshooter.</p>
+                        <div class="mt-4 text-center">
+                            <a href="https://www.faceit.com/en/players/LongLiveCCG" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 transition-colors text-sm">
+                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in-up" style="animation-delay: 0.3s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
+                             src="PlayersPictures/xAndrei001.jpeg" alt="Profile picture of xAndrei001">
+                        <h3 class="text-xl font-semibold text-center">xAndrei001</h3>
+                        <p class="text-red-500 text-center text-sm font-medium">Support</p>
+                        <p class="mt-2 text-center text-xs">Master of utility and clutches.</p>
+                        <div class="mt-4 text-center">
+                            <a href="https://www.faceit.com/en/players/xAndrei001" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 transition-colors text-sm">
+                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card fade-in-up" style="animation-delay: 0.4s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-gray-600 object-cover"
+                             src="https://placehold.co/200x200/111827/6b7280?text=Looking+for+5th&font=inter" alt="Placeholder for fifth team member">
+                        <h3 class="text-xl font-semibold text-center text-gray-400">Looking for 5th</h3>
+                        <p class="text-red-500 text-center text-sm font-medium">Active Player</p>
+                        <p class="mt-2 text-center text-xs text-gray-500">Join ASEROX!</p>
+                        <div class="mt-4 text-center">
+                            <a href="#contact" class="text-red-500 hover:text-red-400 transition-colors text-sm">
+                                Contact Us
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-center mt-16 mb-8 sm:mb-12 tracking-tight text-white fade-in-up">Substitutes</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 justify-center">
+                     <div class="card fade-in-up" style="animation-delay: 0.5s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-yellow-500 object-cover" src="PlayersPictures/-rZv-QQ.jpeg" alt="Profile picture of -rZv-QQ">
+                        <h3 class="text-xl font-semibold text-center">-rZv-QQ</h3>
+                        <p class="text-yellow-400 text-center text-sm font-medium">Substitute</p> <p class="mt-2 text-center text-xs">Ready to step in.</p>
+                        <div class="mt-4 text-center">
+                            <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm">
+                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
+                            </a> -->
+                        </div>
+                    </div>
+
+                    <div class="card fade-in-up" style="animation-delay: 0.6s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-yellow-500 object-cover" src="PlayersPictures/ShungShang.jpeg" alt="Profile picture of ShungShang">
+                        <h3 class="text-xl font-semibold text-center">ShungShang</h3>
+                        <p class="text-yellow-400 text-center text-sm font-medium">Substitute</p> <p class="mt-2 text-center text-xs">Valuable backup.</p>
+                        <div class="mt-4 text-center">
+                             <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm">
+                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="matches" class="py-16 sm:py-24 bg-black">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Recent Matches & Highlights</h2>
+                <div class="text-center max-w-2xl mx-auto fade-in-up">
+                    <p class="text-lg text-gray-300 mb-8">
+                        This section is under construction! Soon you'll find our latest Faceit match results, notable plays, and maybe even some stream highlights.
+                        For now, check out our <a href="https://www.faceit.com/en/teams/4775708b-8cee-4105-a9ec-2fcb7bef7578" target="_blank" rel="noopener noreferrer" class="text-red-500 hover:text-red-400 underline">team's Faceit page</a>.
+                    </p>
+                    <div class="mt-12">
+                         <img src="https://placehold.co/800x450/1f2937/EF4444?text=Epic+Team+Clutch&font=inter" alt="Placeholder for match highlight" class="rounded-lg shadow-xl mx-auto border-2 border-gray-700 hover:border-red-500 transition-colors">
+                         <p class="text-sm text-gray-500 mt-2">A placeholder for an awesome team moment!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 sm:py-24 bg-gray-900/70">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title">Get In Touch / Follow Us</h2>
+                <div class="max-w-lg mx-auto text-center fade-in-up">
+                    <p class="text-lg text-gray-300 mb-8">
+                        Want to schedule a scrim, ask a question, or just say hi? Here's how you can reach us.
+                        Follow our journey on social media!
+                    </p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                            <i class="fab fa-twitter fa-3x"></i><span class="sr-only">Twitter</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                            <i class="fab fa-twitch fa-3x"></i><span class="sr-only">Twitch</span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                            <i class="fab fa-youtube fa-3x"></i><span class="sr-only">YouTube</span>
+                        </a>
+                        <a href="mailto:contact@aserox.gg" class="text-gray-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                            <i class="fas fa-envelope fa-3x"></i><span class="sr-only">Email</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black border-t border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; <span id="currentYear"></span> ASEROX. All Rights Reserved.
+            </p>
+            <p class="text-xs text-gray-500 mt-1">
+                Designed for domination.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>
