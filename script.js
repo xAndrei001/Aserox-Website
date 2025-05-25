@@ -80,8 +80,91 @@ document.addEventListener('DOMContentLoaded', () => {
         elementsToFadeIn.forEach(el => {
             observer.observe(el); // Start observing each element
         });
-    } else {
-        // console.info("No elements with class 'fade-in-up' found for scroll animation.");
     }
+
+    // Player Stats Modal Functionality
+    const modalTriggers = document.querySelectorAll('.player-stats-trigger');
+    const modals = document.querySelectorAll('.stats-modal');
+    const closeButtons = document.querySelectorAll('.close-stats-modal');
+
+    // Function to open a modal
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.classList.remove('hidden');
+            // Add 'active' class after a tiny delay to allow CSS transition to work
+            setTimeout(() => {
+                modal.classList.add('active');
+                document.body.classList.add('modal-open'); // Prevent background scroll
+            }, 10); 
+        } else {
+            console.warn(`Modal with ID "${modalId}" not found.`);
+        }
+    }
+
+    // Function to close a modal
+    function closeModal(modal) {
+        if (modal) {
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open'); // Allow background scroll
+            // Add 'hidden' class after transition finishes
+            // Ensure the timeout matches the transition duration in your CSS (0.3s = 300ms)
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); 
+        }
+    }
+
+    // Add click event listeners to player images (modal triggers)
+    if (modalTriggers.length > 0) {
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const modalId = trigger.dataset.modalTarget;
+                if (modalId) {
+                    openModal(modalId);
+                } else {
+                    console.warn("Modal trigger does not have a data-modal-target attribute:", trigger);
+                }
+            });
+        });
+    } else {
+        // console.info("No player stats triggers found with class 'player-stats-trigger'.");
+    }
+
+    // Add click event listeners to close buttons
+    if (closeButtons.length > 0) {
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const modal = button.closest('.stats-modal');
+                if (modal) {
+                    closeModal(modal);
+                } else {
+                    console.warn("Could not find parent modal for close button:", button);
+                }
+            });
+        });
+    }
+
+    // Add click event listener to modal backdrops to close
+    if (modals.length > 0) {
+        modals.forEach(modal => {
+            modal.addEventListener('click', (event) => {
+                // If the click is directly on the modal backdrop (event.target is the modal itself)
+                if (event.target === modal) {
+                    closeModal(modal);
+                }
+            });
+        });
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            const activeModal = document.querySelector('.stats-modal.active');
+            if (activeModal) {
+                closeModal(activeModal);
+            }
+        }
+    });
 
 }); // End of DOMContentLoaded

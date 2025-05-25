@@ -5,6 +5,11 @@ body {
     color: #F3F4F6; /* Light gray text color for body */
 }
 
+/* Prevent background scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
 /* Custom scrollbar with red accent color */
 ::-webkit-scrollbar {
     width: 8px;
@@ -70,35 +75,30 @@ body {
     object-fit: cover; /* Ensures the video covers the area without distortion */
 }
 
-/* Overlay for text readability on top of the video */
 .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.80); /* Dark overlay, same as before */
+    background-color: rgba(0, 0, 0, 0.80); /* Dark overlay */
     z-index: -50; /* Between video and text content */
 }
 
-
-/* Section title (primarily styled with Tailwind in HTML) */
 .section-title {
-    /* text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12 tracking-tight text-white */
+    /* Tailwind utility classes used directly in HTML */
 }
 
-/* Card styling (primarily styled with Tailwind in HTML) */
 .card {
-    /* bg-gray-900 p-6 rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-300 */
+    /* Tailwind utility classes used directly in HTML */
 }
 .card h3 {
     color: #ffffff;
 }
 .card p {
-    color: #d1d5db; /* Lighter gray for card text (Tailwind gray-300) */
+    color: #d1d5db;
 }
 
-/* Animation for elements appearing on scroll */
 .fade-in-up {
     opacity: 0;
     transform: translateY(20px);
@@ -109,18 +109,52 @@ body {
     transform: translateY(0);
 }
 
-/* Custom class for the logo text - updated for readability and dark navbar */
 .logo-text-style {
-    font-family: 'Inter', sans-serif; /* Changed to Inter for readability */
-    font-weight: 800; /* Extra bold for impact */
-    color: #ffffff; /* White text for the logo on black navbar */
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: #ffffff;
     transition: color 0.2s ease-in-out;
 }
 .logo-text-style:hover {
-    color: #f87171; /* Red-400 on hover for a subtle accent */
+    color: #f87171; /* Red-400 */
 }
 
-/* Ensure Font Awesome icons are sized and aligned if needed */
-.fab, .fas {
-    /* Example: line-height: 1; if vertical alignment issues */
+/* Player Stats Modal Styles */
+.stats-modal {
+    /* Tailwind classes 'fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50' are in HTML */
+    /* Adding transition for fade-in/out effect */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.stats-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.stats-modal-content {
+    /* Tailwind classes 'bg-gray-900 p-6 rounded-lg shadow-xl w-full max-w-md relative border border-red-500/50' are in HTML */
+    /* Adding transform for a slight pop effect */
+    transform: scale(0.95);
+    transition: transform 0.3s ease-in-out;
+}
+
+.stats-modal.active .stats-modal-content {
+    transform: scale(1);
+}
+
+.stats-modal-content ul li {
+    /* Tailwind classes 'text-gray-300 space-y-3' are in HTML for the ul */
+    padding: 0.5rem 0; /* Add some padding to list items */
+    border-bottom: 1px solid #374151; /* gray-700 for separator */
+}
+.stats-modal-content ul li:last-child {
+    border-bottom: none;
+}
+
+.stats-modal-content .close-stats-modal {
+    /* Tailwind classes 'absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none' are in HTML */
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
 }

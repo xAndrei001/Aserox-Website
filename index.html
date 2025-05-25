@@ -11,8 +11,7 @@
 </head>
 <body class="antialiased">
 
-    <header class="navbar-dark bg-black sticky top-0 z-50 shadow-lg">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <header class="navbar-dark bg-black sticky top-0 z-40 shadow-lg"> <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <div class="flex items-center">
                     <a href="#home" class="flex-shrink-0">
@@ -79,7 +78,7 @@
         </section>
 
         <section id="about" class="py-16 sm:py-24 bg-black">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center fade-in-up">
                     <h2 class="text-base font-semibold text-red-500 tracking-wide uppercase">Who We Are</h2>
                     <p class="mt-2 section-title">About Team ASEROX</p>
@@ -100,8 +99,8 @@
                 <h2 class="section-title">Meet Our Squad</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8">
                     <div class="card fade-in-up">
-                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
-                             src="PlayersPictures/flypyyy.jpeg" alt="Profile picture of flypyyy">
+                        <img class="player-stats-trigger w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover cursor-pointer"
+                             src="PlayersPictures/flypyyy.jpeg" alt="Profile picture of flypyyy" data-modal-target="stats-modal-flypyyy">
                         <h3 class="text-xl font-semibold text-center">flypyyy</h3>
                         <p class="text-red-500 text-center text-sm font-medium">IGL</p>
                         <p class="mt-2 text-center text-xs">The strategic mind of the team.</p>
@@ -113,8 +112,8 @@
                     </div>
 
                     <div class="card fade-in-up" style="animation-delay: 0.1s;">
-                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
-                             src="PlayersPictures/CataN1.jpeg" alt="Profile picture of CataN1">
+                        <img class="player-stats-trigger w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover cursor-pointer"
+                             src="PlayersPictures/CataN1.jpeg" alt="Profile picture of CataN1" data-modal-target="stats-modal-catan1">
                         <h3 class="text-xl font-semibold text-center">CataN1</h3>
                         <p class="text-red-500 text-center text-sm font-medium">Entry Fragger</p>
                         <p class="mt-2 text-center text-xs">First to the fight, creating space.</p>
@@ -126,8 +125,8 @@
                     </div>
 
                     <div class="card fade-in-up" style="animation-delay: 0.2s;">
-                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
-                             src="PlayersPictures/LongLiveCCG.jpeg" alt="Profile picture of LongLiveCCG">
+                        <img class="player-stats-trigger w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover cursor-pointer"
+                             src="PlayersPictures/LongLiveCCG.jpeg" alt="Profile picture of LongLiveCCG" data-modal-target="stats-modal-longliveccg">
                         <h3 class="text-xl font-semibold text-center">LongLiveCCG</h3>
                         <p class="text-red-500 text-center text-sm font-medium">AWPer</p>
                         <p class="mt-2 text-center text-xs">The team's sharpshooter.</p>
@@ -139,8 +138,8 @@
                     </div>
 
                     <div class="card fade-in-up" style="animation-delay: 0.3s;">
-                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover"
-                             src="PlayersPictures/xAndrei001.jpeg" alt="Profile picture of xAndrei001">
+                        <img class="player-stats-trigger w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-red-600 object-cover cursor-pointer"
+                             src="PlayersPictures/xAndrei001.jpeg" alt="Profile picture of xAndrei001" data-modal-target="stats-modal-xandrei001">
                         <h3 class="text-xl font-semibold text-center">xAndrei001</h3>
                         <p class="text-red-500 text-center text-sm font-medium">Support</p>
                         <p class="mt-2 text-center text-xs">Master of utility and clutches.</p>
@@ -167,33 +166,26 @@
 
                 <h3 class="text-2xl sm:text-3xl font-bold text-center mt-16 mb-8 sm:mb-12 tracking-tight text-white fade-in-up">Substitutes</h3>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 sm:gap-8 justify-center">
-                     <div class="card fade-in-up" style="animation-delay: 0.5s;">
-                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-yellow-500 object-cover" src="PlayersPictures/-rZv-QQ.jpeg" alt="Profile picture of -rZv-QQ">
+                    <div class="card fade-in-up" style="animation-delay: 0.5s;">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-yellow-500 object-cover"
+                             src="PlayersPictures/-rZv-QQ.jpeg" alt="Profile picture of -rZv-QQ">
                         <h3 class="text-xl font-semibold text-center">-rZv-QQ</h3>
-                        <p class="text-yellow-400 text-center text-sm font-medium">Substitute</p> <p class="mt-2 text-center text-xs">Ready to step in.</p>
-                        <div class="mt-4 text-center">
-                            <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm">
-                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
-                            </a> -->
-                        </div>
+                        <p class="text-yellow-400 text-center text-sm font-medium">Substitute</p>
+                        <p class="mt-2 text-center text-xs">Ready to step in.</p>
                     </div>
-
                     <div class="card fade-in-up" style="animation-delay: 0.6s;">
-                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-yellow-500 object-cover" src="PlayersPictures/ShungShang.jpeg" alt="Profile picture of ShungShang">
+                        <img class="w-32 h-32 sm:w-36 sm:h-36 rounded-full mx-auto mb-4 border-4 border-yellow-500 object-cover"
+                             src="PlayersPictures/ShungShang.jpeg" alt="Profile picture of ShungShang">
                         <h3 class="text-xl font-semibold text-center">ShungShang</h3>
-                        <p class="text-yellow-400 text-center text-sm font-medium">Substitute</p> <p class="mt-2 text-center text-xs">Valuable backup.</p>
-                        <div class="mt-4 text-center">
-                             <!-- <a href="#" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:text-yellow-300 transition-colors text-sm">
-                                View Profile <i class="fas fa-external-link-alt ml-1"></i>
-                            </a> -->
-                        </div>
+                        <p class="text-yellow-400 text-center text-sm font-medium">Substitute</p>
+                        <p class="mt-2 text-center text-xs">Valuable backup.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="matches" class="py-16 sm:py-24 bg-black">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+           <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="section-title">Recent Matches & Highlights</h2>
                 <div class="text-center max-w-2xl mx-auto fade-in-up">
                     <p class="text-lg text-gray-300 mb-8">
@@ -246,7 +238,108 @@
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <div id="stats-modal-flypyyy" class="stats-modal hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="stats-modal-content bg-gray-900 p-6 rounded-lg shadow-xl w-full max-w-md relative border border-red-500/50">
+            <button class="close-stats-modal absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            <h4 class="text-2xl font-bold text-red-500 mb-6 text-center border-b border-gray-700 pb-3">flypyyy - Stats</h4>
+            <ul class="text-gray-300 space-y-3">
+                <li><strong>Current Elo:</strong> <span class="float-right text-white font-semibold">2,068</span></li>
+                <li><strong>Skill Level:</strong> <span class="float-right text-white font-semibold">10</span></li>
+                <li><strong>Matches Played:</strong> <span class="float-right text-white font-semibold">860</span></li>
+                <li><strong>Overall Win Rate:</strong> <span class="float-right text-white font-semibold">52%</span></li>
+                <li><strong>Overall K/D Ratio:</strong> <span class="float-right text-white font-semibold">1.06</span></li>
+                <li><strong>Overall Headshot %:</strong> <span class="float-right text-white font-semibold">46%</span></li>
+                <li><strong>Longest Win Streak:</strong> <span class="float-right text-white font-semibold">10</span></li>
+                <li class="pt-2 mt-2 border-t border-gray-700/50"><strong>Last 30 Matches:</strong></li>
+                <li>&nbsp;&nbsp;&nbsp;Wins/Losses: <span class="float-right text-white font-semibold">22 / 8</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Win Rate: <span class="float-right text-white font-semibold">73%</span></li>
+                <li>&nbsp;&nbsp;&nbsp;K/D Ratio: <span class="float-right text-white font-semibold">1.21</span></li>
+                <li>&nbsp;&nbsp;&nbsp;ADR: <span class="float-right text-white font-semibold">82.66</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Headshot %: <span class="float-right text-white font-semibold">47%</span></li>
+            </ul>
+            <a href="https://www.faceit.com/en/players/flypyyy" target="_blank" rel="noopener noreferrer" 
+               class="mt-6 block w-full text-center py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition-colors">
+                View Full Faceit Profile
+            </a>
+        </div>
+    </div>
 
-</body>2313
+    <div id="stats-modal-catan1" class="stats-modal hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="stats-modal-content bg-gray-900 p-6 rounded-lg shadow-xl w-full max-w-md relative border border-red-500/50">
+            <button class="close-stats-modal absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            <h4 class="text-2xl font-bold text-red-500 mb-6 text-center border-b border-gray-700 pb-3">CataN1 - Stats</h4>
+            <ul class="text-gray-300 space-y-3">
+                <li><strong>Current Elo:</strong> <span class="float-right text-white font-semibold">2,406</span></li>
+                <li><strong>Skill Level:</strong> <span class="float-right text-white font-semibold">10</span></li>
+                <li><strong>Matches Played:</strong> <span class="float-right text-white font-semibold">1450</span></li>
+                <li><strong>Overall Win Rate:</strong> <span class="float-right text-white font-semibold">52%</span></li>
+                <li><strong>Overall K/D Ratio:</strong> <span class="float-right text-white font-semibold">1.25</span></li>
+                <li><strong>Overall Headshot %:</strong> <span class="float-right text-white font-semibold">47%</span></li>
+                <li><strong>Longest Win Streak:</strong> <span class="float-right text-white font-semibold">12</span></li>
+                <li class="pt-2 mt-2 border-t border-gray-700/50"><strong>Last 30 Matches:</strong></li>
+                <li>&nbsp;&nbsp;&nbsp;Wins/Losses: <span class="float-right text-white font-semibold">19 / 11</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Win Rate: <span class="float-right text-white font-semibold">63%</span></li>
+                <li>&nbsp;&nbsp;&nbsp;K/D Ratio: <span class="float-right text-white font-semibold">1.32</span></li>
+                <li>&nbsp;&nbsp;&nbsp;ADR: <span class="float-right text-white font-semibold">94.54</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Headshot %: <span class="float-right text-white font-semibold">53%</span></li>
+            </ul>
+            <a href="https://www.faceit.com/en/players/CataN1" target="_blank" rel="noopener noreferrer" 
+               class="mt-6 block w-full text-center py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition-colors">
+                View Full Faceit Profile
+            </a>
+        </div>
+    </div>
+
+    <div id="stats-modal-longliveccg" class="stats-modal hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="stats-modal-content bg-gray-900 p-6 rounded-lg shadow-xl w-full max-w-md relative border border-red-500/50">
+            <button class="close-stats-modal absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            <h4 class="text-2xl font-bold text-red-500 mb-6 text-center border-b border-gray-700 pb-3">LongLiveCCG - Stats</h4>
+            <ul class="text-gray-300 space-y-3">
+                <li><strong>Current Elo:</strong> <span class="float-right text-white font-semibold">2,068</span></li>
+                <li><strong>Skill Level:</strong> <span class="float-right text-white font-semibold">10</span></li>
+                <li><strong>Matches Played:</strong> <span class="float-right text-white font-semibold">995</span></li>
+                <li><strong>Overall Win Rate:</strong> <span class="float-right text-white font-semibold">51%</span></li>
+                <li><strong>Overall K/D Ratio:</strong> <span class="float-right text-white font-semibold">1.27</span></li>
+                <li><strong>Overall Headshot %:</strong> <span class="float-right text-white font-semibold">38%</span></li>
+                <li><strong>Longest Win Streak:</strong> <span class="float-right text-white font-semibold">9</span></li>
+                <li class="pt-2 mt-2 border-t border-gray-700/50"><strong>Last 30 Matches:</strong></li>
+                <li>&nbsp;&nbsp;&nbsp;Wins/Losses: <span class="float-right text-white font-semibold">19 / 11</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Win Rate: <span class="float-right text-white font-semibold">63%</span></li>
+                <li>&nbsp;&nbsp;&nbsp;K/D Ratio: <span class="float-right text-white font-semibold">1.16</span></li>
+                <li>&nbsp;&nbsp;&nbsp;ADR: <span class="float-right text-white font-semibold">75.73</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Headshot %: <span class="float-right text-white font-semibold">37%</span></li>
+            </ul>
+             <a href="https://www.faceit.com/en/players/LongLiveCCG" target="_blank" rel="noopener noreferrer" 
+               class="mt-6 block w-full text-center py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition-colors">
+                View Full Faceit Profile
+            </a>
+        </div>
+    </div>
+
+    <div id="stats-modal-xandrei001" class="stats-modal hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="stats-modal-content bg-gray-900 p-6 rounded-lg shadow-xl w-full max-w-md relative border border-red-500/50">
+            <button class="close-stats-modal absolute top-3 right-4 text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+            <h4 class="text-2xl font-bold text-red-500 mb-6 text-center border-b border-gray-700 pb-3">xAndrei001 - Stats</h4>
+            <ul class="text-gray-300 space-y-3">
+                <li><strong>Current Elo:</strong> <span class="float-right text-white font-semibold">1,736</span></li>
+                <li><strong>Skill Level:</strong> <span class="float-right text-white font-semibold">8</span></li>
+                <li><strong>Matches Played:</strong> <span class="float-right text-white font-semibold">744</span></li>
+                <li><strong>Overall Win Rate:</strong> <span class="float-right text-white font-semibold">51%</span></li>
+                <li><strong>Overall K/D Ratio:</strong> <span class="float-right text-white font-semibold">1.11</span></li>
+                <li><strong>Overall Headshot %:</strong> <span class="float-right text-white font-semibold">50%</span></li>
+                <li><strong>Longest Win Streak:</strong> <span class="float-right text-white font-semibold">8</span></li>
+                <li class="pt-2 mt-2 border-t border-gray-700/50"><strong>Last 30 Matches:</strong></li>
+                <li>&nbsp;&nbsp;&nbsp;Win Rate: <span class="float-right text-white font-semibold">57%</span></li>
+                <li>&nbsp;&nbsp;&nbsp;K/D Ratio: <span class="float-right text-white font-semibold">0.84</span></li>
+                <li>&nbsp;&nbsp;&nbsp;Headshot %: <span class="float-right text-white font-semibold">49%</span></li>
+            </ul>
+            <a href="https://www.faceit.com/en/players/xAndrei001" target="_blank" rel="noopener noreferrer" 
+               class="mt-6 block w-full text-center py-2 px-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-md transition-colors">
+                View Full Faceit Profile
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
 </html>
